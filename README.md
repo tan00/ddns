@@ -1,3 +1,9 @@
+fork自phuslu/ddns 
+修改内容:
+1. 修改获取外部地址的接口url为中国,防止获取的ip为vpn服务器ip的问题
+2. 增加异常条件判断.防止未获取到外部ip时退出.
+
+
 # ddns
 ```
 Usage: ddns <provider> [arguments]
