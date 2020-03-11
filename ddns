@@ -228,6 +228,9 @@ def namecheap(password, domain):
 def namesilo(key, domain):
     ip = _getip(domain)
     record_name, top_domain = _split(domain)
+    if record_name == '@':
+        record_name = ''
+
     url = 'https://www.namesilo.com/api/dnsListRecords'
     params = {'version': '1', 'type': 'xml', 'key': key, 'domain': top_domain}
     _, _, tree = _request('GET', url, params=params, return_xml=True)
